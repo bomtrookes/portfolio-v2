@@ -1,2 +1,21 @@
-<h1>Projects#index</h1>
-<p>Find me in app/views/projects/index.html.erb</p>
+<div class="container">
+  <h1>Projects</h1>
+  <%= link_to "New Project", new_project_path %>
+  <hr>
+  <% @projects.each do |project| %>
+    <div class="card container">
+      <h2><%= link_to project.name, project_path(project) %></h2>
+      <%= cl_image_tag project.image.key, height: 300, width: 400, crop: :fill %>
+      <hr>
+      <p><%= project.caption %><p>
+      <div class="skills">
+        <ul>
+          <% project.skills.each do |skill| %>
+            <li><%= skill %></li>
+          <% end %>
+        </ul>
+      </div>
+
+    </div>
+  <% end %>
+</div>

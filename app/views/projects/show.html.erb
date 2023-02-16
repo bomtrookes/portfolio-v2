@@ -1,2 +1,28 @@
-<h1>Projects#show</h1>
-<p>Find me in app/views/projects/show.html.erb</p>
+<div class="container">
+  <h1><%= @project.name %></h1>
+  <%= link_to "< Projects", projects_path %>
+  <br>
+  <br>
+  <%= cl_image_tag @project.image.key, height: 300, width: 400, crop: :fill %>
+  <hr>
+  <p><%= @project.caption %></p>
+  <hr>
+  <p><%= @project.content %></p>
+
+  <div class="card container">
+    <a href="<%= @project.github %>">GitHub</a>
+    <a href="<%= @project.blog %>">Blog</a>
+    <a href="<%= @project.url %>">Project Url</a>
+    <h4>Built with...</h3>
+    <%= @project.skills.first %>
+  </div>
+  <br>
+  <div class="card container">
+    <h4>Other Projects</h3>
+    <ul>
+      <% @projects.each do |project| %>
+        <li><%= project.name %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
