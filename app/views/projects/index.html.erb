@@ -14,23 +14,25 @@
   <% end %>
 
   <hr>
-  <% @projects.each do |project| %>
-    <div class="card container">
-      <h2><%= link_to project.name, project_path(project) %></h2>
-      <%# if cl_image_tag project.image.key.present? %>
-        <%= cl_image_tag project.image.key, height: 300, width: 400, crop: :fill %>
-      <%# end %>
-      <hr>
-      <p><%= project.caption %><p>
-      <div class="skills">
-        <ul>
-          <% project.skills.each do |skill| %>
-            <li><%= skill %></li>
-          <% end %>
-        </ul>
-      </div>
+  <div class="row d-flex justify-content-center">
+    <% @projects.each do |project| %>
+      <div class="card container col-md-5 col-xs-10 m-3">
+        <h2><%= link_to project.name, project_path(project) %></h2>
+        <%# if cl_image_tag project.image.key.present? %>
+          <%= cl_image_tag project.image.key, height: 300, width: 400, crop: :fill %>
+        <%# end %>
+        <hr>
+        <p><%= project.caption %><p>
+        <div class="skills">
+          <ul>
+            <% project.skills.each do |skill| %>
+              <li><%= skill %></li>
+            <% end %>
+          </ul>
+        </div>
 
-    </div>
-    <br>
-  <% end %>
+      </div>
+      <br>
+    <% end %>
+  </div>
 </div>
