@@ -1,11 +1,20 @@
 <div class="container">
   <h1>Projects</h1>
-  <%= link_to "New Project", new_project_path %>
+  <br>
+  <div class="d-flex justify-content-between">
+    <%= link_to "New Project", new_project_path %>
+    <div class="search">
+      <input placeholder="Search Blog Posts..." type="text">
+      <button>Search</button>
+    </div>
+  </div>
   <hr>
   <% @projects.each do |project| %>
     <div class="card container">
       <h2><%= link_to project.name, project_path(project) %></h2>
-      <%= cl_image_tag project.image.key, height: 300, width: 400, crop: :fill %>
+      <%# if cl_image_tag project.image.key.present? %>
+        <%= cl_image_tag project.image.key, height: 300, width: 400, crop: :fill %>
+      <%# end %>
       <hr>
       <p><%= project.caption %><p>
       <div class="skills">
@@ -17,5 +26,6 @@
       </div>
 
     </div>
+    <br>
   <% end %>
 </div>

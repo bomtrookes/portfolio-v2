@@ -2,6 +2,8 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def home
+    @projects = Project.all
+    @blogs = Blog.all
   end
 
   def index
@@ -17,7 +19,8 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(project_params)
+    skills = params[:project][:skills].split(",")
+    @project = Project.new(project_params.merge(skills: skills))
     if @project.save
       redirect_to project_path(@project)
     else
@@ -29,17 +32,23 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    if @project.update(project_params)
-      redirect_to projects_path
+    skills = params[:project][:skills].split(",")
+    if @project.update(project_params.merge(skills: skills))
+      redirect_to project_path(@project)
     else
-      render 'edit'
+      render 'edit', status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @project.destroy
+    redirect_to projects_path, status: :see_other
   end
 
   private
 
   def project_params
-    params.require(:project).permit(:name, :caption, :content, :skills, :url, :github, :blog, :image)
+    params.require(:project).permit(:name, :caption, :content, :url, :github, :blog, :image, skills: [])
   end
 
   def set_project

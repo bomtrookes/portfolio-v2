@@ -1,4 +1,4 @@
-<%= simple_form_for(@project) do |f| %>
+<%= simple_form_for(@project, method: :put) do |f| %>
 
   <%= f.input :name %>
   <%= f.input :caption %>
@@ -7,6 +7,7 @@
   <%= f.input :url %>
   <%= f.input :blog %>
   <%= f.input :image, as: :file %>
+  <%= f.input :skills, input_html: { name: "project[skills]" } %>
   <%= f.submit %>
 
 <% end %>

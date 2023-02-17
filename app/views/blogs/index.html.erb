@@ -1,2 +1,21 @@
-<h1>Blogs#index</h1>
-<p>Find me in app/views/blogs/index.html.erb</p>
+<div class="container">
+  <h1>Blog Posts</h1>
+  <br>
+  <div class="d-flex justify-content-between">
+    <%= link_to "Write Blog Post", new_blog_path %>
+    <div class="search">
+      <input placeholder="Search Blog Posts..." type="text">
+      <button>Search</button>
+    </div>
+  </div>
+  <hr>
+
+  <% @blogs.each do |blog| %>
+    <div class="card">
+      <h2><%= link_to blog.title, blog_path(blog) %></h2>
+      <p><%= blog.created_at %></p>
+    </div>
+    <br>
+  <% end %>
+
+</div>
