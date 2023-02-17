@@ -1,13 +1,18 @@
 <div class="container">
-  <h1>Projects</h1>
-  <br>
   <div class="d-flex justify-content-between">
-    <%= link_to "New Project", new_project_path %>
-    <div class="search">
-      <input placeholder="Search Blog Posts..." type="text">
-      <button>Search</button>
-    </div>
+    <h1>Projects</h1>
+    <p><%= link_to "New Project", new_project_path %></p>
   </div>
+
+  <%= form_with url: projects_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search..."
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+
   <hr>
   <% @projects.each do |project| %>
     <div class="card container">

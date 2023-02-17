@@ -2,8 +2,13 @@ class BlogsController < ApplicationController
   include ActionView::Helpers::SanitizeHelper
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   before_action :sanitize_html_input, only: [:create, :update]
+
   def index
+    if params[:query].present?
+      @blogs = Blog.search_by_title_and_content(params[:query])
+    else
     @blogs = Blog.all
+    end
   end
 
   def show
