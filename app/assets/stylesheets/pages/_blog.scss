@@ -1,0 +1,24 @@
+.blog-img-sm {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+}
+.blog-img {
+  display: block;
+  margin: 0 auto;
+  width: 75%;
+}
+.blog-img-lg {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+.blog-header {
+  display: grid;
+  place-items: center;
+  height: 300px;
+  color: white;
+  background-position : center;
+  background-size : cover;
+  background-repeat : no-repeat;
+}

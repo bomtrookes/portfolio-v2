@@ -15,9 +15,18 @@
 
   <hr>
   <% @blogs.each do |blog| %>
-    <div class="card container">
+    <div class="card d-flex flex-row">
+      <% if blog.image.present? %>
+        <div class="blog-header rounded"
+        style="width: 100px; height: 100px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path blog.image.key, height: 100, crop: :fill %>')">
+        </div>
+      <% end %>
+
+    <div class="p-2">
       <h4><%= link_to blog.title, blog_path(blog) %></h2>
       <p><%= blog.created_at %></p>
+    </div>
+
     </div>
     <br>
   <% end %>
