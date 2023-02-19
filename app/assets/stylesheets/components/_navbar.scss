@@ -1,4 +1,8 @@
 nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
   background-color: rgb(52, 52, 52);
   color: white;
   height: 40px;
@@ -8,10 +12,12 @@ nav {
     padding: 0;
     li {
       display: inline-block;
+      padding-left: 12px;
     }
   }
   a {
     color: white;
     text-decoration: none;
   }
+  border-bottom: 2px solid white;
 }

@@ -1,32 +1,47 @@
-<div class="container">
-  <div class="title-box">
-    <h1 style="transition-delay: 300ms">Tom Brookes.</h1>
-    <div class="title-line" style="transition-delay: 200ms"></div>
-    <h2 style="transition-delay: 400ms">Full Stack Developer.</h2>
-    <br>
-    <p>On this page, include the following:</p>
-    <ul>
-      <li>About Me</li>
-      <li>Weather API</li>
-      <li>Spotify API</li>
-      <li>GitHub Contributions API</li>
-      <li>Contact</li>
-    </ul>
+<div class="row">
+  <div class="col-3 p-0">
+    <div class="home-container">
+      <p>In this column, include the following:</p>
+        <ul>
+          <li>About Me</li>
+          <li>Contact</li>
+        </ul>
+    </div>
   </div>
 
-  <div class="resume-box">
-      <a style="transition-delay: 500ms" id="resume-btn" href="./Tom Brookes CV.pdf" download target="_blank">Download CV</a>
-  </div>
+  <div class="col-6 p-0">
+    <div class="home-container">
 
+      <div class="title-box">
+        <h1>Tom Brookes.</h1>
+        <h2>Full Stack Developer.</h2>
+      </div>
+
+      <div class="d-flex justify-content-center">
+          <a id="resume-btn" href="./Tom Brookes CV.pdf" download target="_blank">Download CV</a>
+      </div>
+
+    </div>
 </div>
 
-<br>
-<hr>
+  <div class="col-3 p-0">
+    <div class="home-container">
+      <p>In this column, include the following:</p>
+      <ul>
+        <li>Weather API</li>
+        <li>Spotify API</li>
+        <li>GitHub Contributions API</li>
+      </ul>
+    </div>
+  </div>
 
-<div class="container">
-  <h5>Latest Blog Post:</h5>
-  <%= link_to @blogs.last.title, blog_path(@blogs.last) %>
-  <br><br>
-  <h5>Recent Project:</h5>
-  <%= link_to @projects.last.name, project_path(@projects.last) %>
+<div class="row p-0">
+    <div class="home-container col-12">
+      <h5>Latest Blog Post:</h5>
+        <%= link_to @blogs.last.title, blog_path(@blogs.last) %>
+      <br><br>
+      <h5>Recent Project:</h5>
+        <%= link_to @projects.last.name, project_path(@projects.last) %>
+    </div>
+  </div>
 </div>
