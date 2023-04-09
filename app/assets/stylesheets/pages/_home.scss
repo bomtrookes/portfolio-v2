@@ -1,7 +1,82 @@
-.home-container {
-  height: 100%;
-  border-bottom: 2px solid white;
-  background-color: #343434;
-  color: white;
-  padding: 16px 32px;
+#landing {
+  background-color: antiquewhite;
+  color: rgb(46, 27, 20);
+  display: grid;
+  padding-left: 2% ;
+  min-height: 100vh;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 40% 60%;
+  grid-template-areas:
+    "ink recent"
+    "welcome links";
+  #welcome {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    grid-area: welcome;
+    padding: 1rem;
+    font-size: 14px;
+    h1 {
+      font-size: 2rem;
+    }
+    span {
+      font-weight: 200;
+    }
+  }
+  #ink {
+    grid-area: ink;
+    img {
+      width: 50%;
+    }
+  }
+  #recent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    grid-area: recent;
+    padding: 1rem;
+    h1 {
+      font-size: 2rem;
+    }
+    a {
+      font-family: 'Dancing Script', cursive;
+      color:rgb(46, 27, 20);
+      text-decoration: none;
+      &:hover {
+        color: rgb(255, 165, 0);
+        text-decoration: underline;
+      }
+    }
+  }
+  #links {
+    display: grid;
+    place-items: center;
+    grid-area: links;
+    transform: rotate(-90deg);
+    h2 {
+      font-size: 9rem;
+      font-family: 'Bebas Neue', cursive;
+    }
+    a {
+      text-decoration: none;
+      color: rgb(46, 27, 20);
+      cursor: pointer;
+      &:hover {
+        color: rgb(255, 165, 0);
+        text-decoration: underline;
+      }
+    }
+  }
+  #navigate {
+    position: fixed;
+    bottom: 0;
+    right: 8px;
+    font-size: 3rem;
+    &:hover {
+      color: rgb(255, 165, 0);
+    }
+  }
 }
