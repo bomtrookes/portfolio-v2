@@ -20,13 +20,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: monospace;
 }
 #about {
   padding: 24px;
   background-color: antiquewhite;
-  justify-content: space-around;
   #about-text {
     width: 40%;
+    margin: auto 0;
+  }
+  .about-container {
+    background: white;
+    max-width: 75%;
+    display: flex;
+    justify-content: center;
+    padding: 36px 24px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-size: 14px;
+    font-family: monospace;
   }
 }
 
@@ -51,9 +62,10 @@
     font-size: 14px;
     h1 {
       font-size: 2rem;
+      margin-bottom: 1rem;
     }
     span {
-      font-weight: 200;
+      font-weight: bold;
     }
   }
   #ink {
