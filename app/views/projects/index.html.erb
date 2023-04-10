@@ -5,6 +5,7 @@
     <p><%= link_to "New Project", new_project_path %></p>
   </div>
 
+  <%# When you press a key have typewriter sound %>
   <%= form_with url: projects_path, method: :get, class: "d-flex container" do %>
   <%= text_field_tag :query,
     params[:query],
