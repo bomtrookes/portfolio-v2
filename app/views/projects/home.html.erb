@@ -1,4 +1,4 @@
-<div id="landing-container">
+<div id="landing-container" data-controller="navigate" data-navigate-target="container">
   <main id="landing">
 
     <section id="ink">
@@ -18,6 +18,7 @@
       <div>
         <h2><%= link_to "WORK", projects_path %></h2>
         <h2><%= link_to "BLOG", blogs_path %></h2>
+        <h2><a href="#">CONTACT</a></h2>
       </div>
 
     </section>
@@ -31,11 +32,17 @@
         <%= link_to @projects.last.name, project_path(@projects.last) %>
 
     </section>
-      <h2 id ="navigate"><i class="bi bi-arrow-down-circle-fill"></i></h2>
+      <h2 id ="navigate" data-navigate-target="button" data-action="click->navigate#scroll">
+        <i class="bi bi-arrow-down-circle-fill"></i>
+      </h2>
 
   </main>
 
   <main id="about">
+
+      <div id="about-image">
+        <img src="../../assets/tom.png" alt="Tom Brookes">
+      </div>
 
       <div id="about-text">
         <h2>About Me</h2>
@@ -43,9 +50,6 @@
         <p>I am currently learning React, and am looking to further my skills in Ruby on Rails, and JavaScript.</p>
       </div>
 
-      <div id="about-image">
-        <img src="../../assets/tom.png" alt="Tom Brookes">
-      </div>
 
   </main>
 </div>

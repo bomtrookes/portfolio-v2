@@ -1,7 +1,11 @@
-// * {
-//   background-color: rgba(75, 150, 75, 0.1) !important;
-// }
-
+* {
+  // background-color: rgba(75, 150, 75, 0.1) !important;
+  box-sizing: border-box;
+}
 body {
   position: relative;
+}
+.alert {
+  padding: 0;
+  margin: 0;
 }
