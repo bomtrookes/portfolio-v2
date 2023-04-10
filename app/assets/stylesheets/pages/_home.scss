@@ -1,6 +1,9 @@
 .projects-home {
   height: 100vh;
   overflow: hidden;
+  nav {
+    display: none;
+  }
 }
 #landing-container {
   height: 100%;
