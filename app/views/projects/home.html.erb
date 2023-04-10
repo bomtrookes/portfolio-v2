@@ -1,53 +1,57 @@
-<div class="row">
-  <div class="col-3 p-0">
-    <div class="home-container">
-      <p>In this column, include the following:</p>
-        <ul>
-          <%# scroll left and right on the home page to reveal that information on click / swipe %>
-          <%# these are links to a specific position along the x-axis scrollbar %>
-          <li>About Me</li>
-          <li>Contact</li>
-        </ul>
-    </div>
-  </div>
+<div id="landing-container" data-controller="navigate" data-navigate-target="container">
+  <main id="landing">
 
-  <div class="col-6 p-0">
-    <div class="home-container" style="min-height: 60vh">
+    <section id="ink">
+      <img src="../../assets/ink.png" alt="ink">
+    </section>
 
-      <div class="title-box">
-        <h1>Tom Brookes.</h1>
-        <h2>Full Stack Developer.</h2>
+    <section id="welcome">
+
+      <h1>Tom <span>Brookes</span></h1>
+      <p>I am constantly building, learning and developing my skills.</p>
+      <p>Take a look at my work, or browse my blog.</p>
+
+    </section>
+
+    <section id="links">
+
+      <div>
+        <h2><%= link_to "WORK", projects_path %></h2>
+        <h2><%= link_to "BLOG", blogs_path %></h2>
+        <h2><a href="#">CONTACT</a></h2>
       </div>
 
-      <div class="d-flex justify-content-center">
-          <a id="resume-btn" href="./Tom Brookes CV.pdf" download target="_blank">Download CV</a>
-      </div>
+    </section>
 
-      <div class="github m-2">
-        <img src="https://camo.githubusercontent.com/ef2333448a63eb9a6eeb394d3ec71d513dee817481a364fa66157074eb7628be/68747470733a2f2f6769746875622d726561646d652d73747265616b2d73746174732e6865726f6b756170702e636f6d2f3f757365723d626f6d74726f6f6b6573" alt="github">
-      </div>
+    <section id="recent">
 
-    </div>
-</div>
-
-  <div class="col-3 p-0">
-    <div class="home-container">
-      <p>In this column, include the following:</p>
-      <ul>
-        <li>Weather API</li>
-        <li>Spotify API</li>
-        <li>GitHub Contributions API</li>
-      </ul>
-    </div>
-  </div>
-
-<div class="row p-0">
-    <div class="home-container col-12">
       <h5>Latest Blog Post:</h5>
         <%= link_to @blogs.last.title, blog_path(@blogs.last) %>
       <br><br>
       <h5>Recent Project:</h5>
         <%= link_to @projects.last.name, project_path(@projects.last) %>
+
+    </section>
+      <h2 id ="navigate" data-navigate-target="button" data-action="click->navigate#scroll">
+        <i class="bi bi-arrow-down-circle-fill"></i>
+      </h2>
+
+  </main>
+
+  <main id="about">
+
+    <div class="about-container">
+        <div id="about-image">
+          <img src="../../assets/tom.png" alt="Tom Brookes">
+        </div>
+
+        <div id="about-text">
+          <h2>About Me</h2>
+          <p>I am a full stack developer with a passion for building and learning. I am currently working as a software engineer at <a href="https://www.theschooloflife.com/" target="_blank">The School of Life</a>, where I am building a new e-commerce platform. I am also a freelance developer, and have worked on a number of projects for clients.</p>
+          <p>I am currently learning React, and am looking to further my skills in Ruby on Rails, and JavaScript.</p>
+        </div>
     </div>
-  </div>
+
+
+  </main>
 </div>

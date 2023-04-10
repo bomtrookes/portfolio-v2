@@ -1,10 +1,12 @@
-<div class="container">
-  <div class="d-flex justify-content-between">
+<div>
+
+  <div class="d-flex justify-content-between container mt-2">
     <h1>Projects</h1>
     <p><%= link_to "New Project", new_project_path %></p>
   </div>
 
-  <%= form_with url: projects_path, method: :get, class: "d-flex" do %>
+  <%# When you press a key have typewriter sound %>
+  <%= form_with url: projects_path, method: :get, class: "d-flex container" do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
@@ -13,26 +15,29 @@
   <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
 
-  <hr>
-  <div class="row d-flex justify-content-center">
-    <% @projects.each do |project| %>
-      <div class="card container col-md-5 col-xs-10 m-3">
-        <h2><%= link_to project.name, project_path(project) %></h2>
-        <%# if cl_image_tag project.image.key.present? %>
-          <%= cl_image_tag project.image.key, height: 300, width: 400, crop: :fill %>
-        <%# end %>
-        <hr>
-        <p><%= project.caption %><p>
-        <div class="skills">
-          <ul>
-            <% project.skills.each do |skill| %>
-              <li><%= skill %></li>
-            <% end %>
-          </ul>
-        </div>
-
-      </div>
-      <br>
+  <% @projects.each_with_index do |project, index| %>
+    <% if index % 2 == 0 %>
+      <section class="left">
+    <% else %>
+      <section class="right">
     <% end %>
-  </div>
+
+    <%= cl_image_tag project.image.key, height: 300, width: 400, crop: :fill %>
+
+    <div class="content">
+      <h2><%= link_to project.name, project_path(project) %></h2>
+      <p><%= project.caption %><p>
+      <div class="skills">
+        <ul>
+          <% project.skills.each do |skill| %>
+            <li><%= skill %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+    </section>
+
+  <% end %>
+
 </div>

@@ -1,7 +1,125 @@
-.home-container {
+.projects-home {
+  height: 100vh;
+  overflow: hidden;
+  nav {
+    display: none;
+  }
+}
+#landing-container {
   height: 100%;
-  border-bottom: 2px solid white;
-  background-color: #343434;
-  color: white;
-  padding: 16px 32px;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+#landing, #about {
+  scroll-snap-align: start;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace;
+}
+#about {
+  padding: 24px;
+  background-color: antiquewhite;
+  #about-text {
+    width: 40%;
+    margin: auto 0;
+  }
+  .about-container {
+    background: white;
+    max-width: 75%;
+    display: flex;
+    justify-content: center;
+    padding: 36px 24px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-size: 14px;
+    font-family: monospace;
+  }
+}
+
+#landing {
+  background-color: antiquewhite;
+  color: rgb(46, 27, 20);
+  display: grid;
+  padding: 3rem;
+  min-height: 100vh;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 40% 60%;
+  grid-template-areas:
+    "ink recent"
+    "welcome links";
+  #welcome {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    grid-area: welcome;
+    padding: 1rem;
+    font-size: 14px;
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    span {
+      font-weight: bold;
+    }
+  }
+  #ink {
+    grid-area: ink;
+  }
+  #recent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    grid-area: recent;
+    padding: 1rem;
+    h1 {
+      font-size: 2rem;
+    }
+    a {
+      font-family: 'Dancing Script', cursive;
+      color:rgb(46, 27, 20);
+      text-decoration: none;
+      &:hover {
+        color: rgb(255, 165, 0);
+        text-decoration: underline;
+      }
+    }
+  }
+  #links {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    grid-area: links;
+    transform: rotate(-90deg);
+    h2 {
+      font-size: 6rem;
+      font-family: 'Bebas Neue', cursive;
+    }
+    a {
+      text-decoration: none;
+      color: rgb(46, 27, 20);
+      cursor: pointer;
+      &:hover {
+        color: rgb(255, 165, 0);
+        text-decoration: underline;
+      }
+    }
+  }
+  #navigate {
+    position: fixed;
+    bottom: 0;
+    right: 8px;
+    font-size: 3rem;
+    transition: transform 0.3s ease;
+    &:hover {
+      color: rgb(255, 165, 0);
+    }
+  }
 }

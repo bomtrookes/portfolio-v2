@@ -1,0 +1,15 @@
+// home page image
+#about-image {
+  margin: 24px;
+  img {
+    height: 300px;
+    aspect-ratio: 1/1;
+    filter: sepia(50%);
+    object-fit: cover;
+    border: 8px solid white;
+    // transform: rotate(-90deg);
+  }
+}
+#ink img {
+  width: 50%;
+}

@@ -1,0 +1,17 @@
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 35px;
+  p {
+    color: rgba(46, 27, 20, 0.3);
+    font-family: monospace;
+    font-style: italic;
+    font-size: 12px;
+    transform: rotate(-90deg);
+  }
+}
