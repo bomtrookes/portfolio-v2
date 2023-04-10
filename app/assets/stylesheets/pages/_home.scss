@@ -1,8 +1,27 @@
+.projects-home {
+  height: 100vh;
+  overflow: hidden;
+}
+#landing-container {
+  height: 100%;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+main {
+  scroll-snap-align: start;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#about-image img {
+  height: 300px;
+}
 #landing {
   background-color: antiquewhite;
   color: rgb(46, 27, 20);
   display: grid;
-  padding-left: 2% ;
+  padding: 3rem;
   min-height: 100vh;
   grid-template-columns: 50% 50%;
   grid-template-rows: 40% 60%;
@@ -52,8 +71,9 @@
     }
   }
   #links {
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     grid-area: links;
     transform: rotate(-90deg);
     h2 {

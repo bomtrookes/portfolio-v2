@@ -1,35 +1,51 @@
-<main id="landing">
+<div id="landing-container">
+  <main id="landing">
 
-  <section id="ink">
-    <img src="../../assets/ink.png" alt="ink">
-  </section>
+    <section id="ink">
+      <img src="../../assets/ink.png" alt="ink">
+    </section>
 
-  <section id="welcome">
+    <section id="welcome">
 
-    <h1>Tom <span>Brookes</span></h1>
-    <p>I am constantly building, learning and furthering my skills.</p>
-    <p>Take a look at my work, or browse my blog.</p>
+      <h1>Tom <span>Brookes</span></h1>
+      <p>I am constantly building, learning and furthering my skills.</p>
+      <p>Take a look at my work, or browse my blog.</p>
 
-  </section>
+    </section>
 
-  <section id="links">
+    <section id="links">
 
-    <div>
-      <h2><%= link_to "WORK", projects_path %></h2>
-      <h2><%= link_to "BLOG", blogs_path %></h2>
-    </div>
+      <div>
+        <h2><%= link_to "WORK", projects_path %></h2>
+        <h2><%= link_to "BLOG", blogs_path %></h2>
+      </div>
 
-  </section>
+    </section>
 
-  <section id="recent">
+    <section id="recent">
 
-    <h5>Latest Blog Post:</h5>
-      <%= link_to @blogs.last.title, blog_path(@blogs.last) %>
-    <br><br>
-    <h5>Recent Project:</h5>
-      <%= link_to @projects.last.name, project_path(@projects.last) %>
+      <h5>Latest Blog Post:</h5>
+        <%= link_to @blogs.last.title, blog_path(@blogs.last) %>
+      <br><br>
+      <h5>Recent Project:</h5>
+        <%= link_to @projects.last.name, project_path(@projects.last) %>
 
-  </section>
-    <h2 id ="navigate"><i class="bi bi-arrow-down-circle-fill"></i></h2>
+    </section>
+      <h2 id ="navigate"><i class="bi bi-arrow-down-circle-fill"></i></h2>
 
-</main>
+  </main>
+
+  <main id="about">
+
+      <div id="about-text">
+        <h2>About Me</h2>
+        <p>I am a full stack developer with a passion for building and learning. I am currently working as a software engineer at <a href="https://www.theschooloflife.com/" target="_blank">The School of Life</a>, where I am building a new e-commerce platform. I am also a freelance developer, and have worked on a number of projects for clients.</p>
+        <p>I am currently learning React, and am looking to further my skills in Ruby on Rails, and JavaScript.</p>
+      </div>
+
+      <div id="about-image">
+        <img src="../../assets/tom.png" alt="Tom Brookes">
+      </div>
+
+  </main>
+</div>

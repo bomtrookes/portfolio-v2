@@ -14,9 +14,14 @@
   <% end %>
 
   <hr>
-  <div class="row d-flex justify-content-center">
-    <% @projects.each do |project| %>
+
+    <% @projects.each_with_index do |project, index| %>
+      <%# we're going to alternate the text alignment left and right %>
+      <% if index % 2 == 0 %>
+        <div class="card container col-md-5 col-xs-10 m-3" style="background-color:red">
+      <% else %>
       <div class="card container col-md-5 col-xs-10 m-3">
+      <% end %>
         <h2><%= link_to project.name, project_path(project) %></h2>
         <%# if cl_image_tag project.image.key.present? %>
           <%= cl_image_tag project.image.key, height: 300, width: 400, crop: :fill %>
@@ -31,8 +36,10 @@
           </ul>
         </div>
 
+      <%=  %>
+
       </div>
       <br>
     <% end %>
-  </div>
+
 </div>
