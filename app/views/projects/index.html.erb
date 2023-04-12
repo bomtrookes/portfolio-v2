@@ -1,4 +1,4 @@
-<div>
+<div class="mt-3">
 
   <div class="d-flex justify-content-between container mt-2">
     <h1>Projects</h1>
@@ -12,32 +12,25 @@
     class: "form-control",
     placeholder: "Search..."
   %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <%= submit_tag "Search", class: "btn btn-dark" %>
   <% end %>
 
-  <% @projects.each_with_index do |project, index| %>
-    <% if index % 2 == 0 %>
-      <section class="left">
-    <% else %>
-      <section class="right">
-    <% end %>
+      <div class="row d-flex justify-content-center mt-5">
 
-    <%= cl_image_tag project.image.key, height: 300, width: 400, crop: :fill %>
+      <% @projects.each_with_index do |project, index| %>
 
-    <div class="content">
-      <h2><%= link_to project.name, project_path(project) %></h2>
-      <p><%= project.caption %><p>
-      <div class="skills">
-        <ul>
-          <% project.skills.each do |skill| %>
-            <li><%= skill %></li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
+        <article class="project-card col-md-4 col-sm-6 col-xs-12" style="background:url('<%= cl_image_path project.image.key %>') center/cover no-repeat">
+          <div class="border">
 
-    </section>
+            <div class="content">
+              <h2><%= link_to project.name, project_path(project) %></h2>
+            </div>
 
-  <% end %>
+          </div>
+        </article>
+
+      <% end %>
+
+  </div>
 
 </div>
