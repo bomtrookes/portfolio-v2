@@ -1,5 +1,6 @@
 class Project < ApplicationRecord
-  has_one_attached :image
+  has_one_attached :cover_image
+  has_many_attached :images
 
   validates :name, presence: true
   validates :caption, presence: true

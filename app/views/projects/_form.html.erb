@@ -1,12 +1,13 @@
 <%= simple_form_for(@project) do |f| %>
 
+  <%= f.input :cover_image, as: :file %>
   <%= f.input :name %>
   <%= f.input :caption %>
   <%= f.input :content %>
   <%= f.input :github %>
   <%= f.input :url %>
   <%= f.input :blog %>
-  <%= f.input :image, as: :file %>
+  <%= f.input :images, as: :file %>
   <%= f.input :skills, input_html: { name: "project[skills]" } %>
   <%= f.submit %>
 

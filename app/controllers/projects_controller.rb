@@ -52,7 +52,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name, :caption, :content, :url, :github, :blog, :image, skills: [])
+    params.require(:project).permit(:name, :caption, :content, :url, :github, :blog, , :cover_image, images: [], skills: [])
   end
 
   def set_project
