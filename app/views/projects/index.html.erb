@@ -17,19 +17,19 @@
 
       <div class="row d-flex justify-content-center mt-5">
 
-      <% @projects.each_with_index do |project, index| %>
+<% @projects.each_with_index do |project, index| %>
 
-        <article class="project-card col-md-4 col-sm-6 col-xs-12" style="background:url('<%= cl_image_path project.image.key %>') center/cover no-repeat">
-          <div class="border">
+  <% if project.images.attached? %>
+    <article class="project-card col-md-4 col-sm-6 col-xs-12" style="background:url('<%= cl_image_path project.images.last.key %>') center/cover no-repeat">
+      <div class="border">
+        <div class="content">
 
-            <div class="content">
-              <h2><%= link_to project.name, project_path(project) %></h2>
-            </div>
+        </div>
+      </div>
+    </article>
+  <% end %>
 
-          </div>
-        </article>
-
-      <% end %>
+<% end %>
 
   </div>
 
