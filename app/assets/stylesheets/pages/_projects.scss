@@ -1,0 +1,66 @@
+.projects-index {
+  color: rgb(68, 26, 3);
+  background-color: antiquewhite;
+}
+#projects {
+  display: grid;
+  height: 100vh;
+  width: 100%;
+  font-family: monospace;
+  overflow: hidden;
+  grid-template-columns: 20% 50% 30%;
+  grid-template-rows: 20% 60% 20;
+  grid-template-areas:
+    "header header header"
+    "work square projects"
+    ". . .";
+
+}
+.projects-header {
+  grid-area: header;
+  height: 100%;
+  width: 100%;
+  font-size: 2rem;
+  font-weight: 700;
+}
+#work {
+  display: grid;
+  place-items: center;
+  grid-area: work;
+  h2 {
+    transform: rotate(-90deg);
+    font-size: 8.5rem;
+  }
+}
+#square {
+  grid-area: square;
+  width: 450px;
+  height: 450px;
+  overflow: hidden;
+  margin: 0 auto;
+  // background: #444444;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-auto-flow: row;
+}
+.projects-index {
+  padding: 0 12px;
+  grid-area: projects;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 14px;
+  h6 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  a {
+    text-decoration: none;
+    color: rgb(68, 26, 3);
+  }
+}
