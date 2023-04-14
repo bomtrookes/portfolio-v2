@@ -2,6 +2,12 @@
   color: rgb(68, 26, 3);
   background-color: antiquewhite;
 }
+.projects-show {
+  overflow: hidden;
+  background-color: antiquewhite;
+  color: rgb(68, 26, 3);
+
+}
 #projects {
   display: grid;
   height: 100vh;
@@ -62,5 +68,28 @@
   a {
     text-decoration: none;
     color: rgb(68, 26, 3);
+  }
+}
+
+#project-show {
+  display: grid;
+  height: 100vh;
+  width: 100%;
+  font-family: monospace;
+  overflow: hidden;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "project images";
+  main {
+    grid-area: project;
+    overflow-y: scroll;
+  }
+  aside {
+    grid-area: images;
+    overflow-y: scroll;
+    img {
+      width: 100%;
+    }
   }
 }
