@@ -1,21 +1,15 @@
-<div class="container">
-  <h1><%= @project.name %></h1>
-  <%= link_to "All Projects", projects_path %>
-  <%= link_to "Edit", edit_project_path(@project) %>
-  <br>
-  <br>
-    <div class="row">
-      <div class="col-md-8">
-
-        <%= cl_image_tag @project.images.first.key, height: 300, width: 400, crop: :fill %>
+<div id="project-show">
+  <main>
+    <h1><%= @project.name %></h1>
+      <%= link_to "All Projects", projects_path %>
+      <%= link_to "Edit", edit_project_path(@project) %>
+        <br>
+        <br>
         <hr>
-        <p><%= @project.caption %></p>
+      <p><%= @project.caption %></p>
         <hr>
-        <p><%= @project.content %></p>
+      <p><%= @project.content %></p>
 
-      </div>
-
-      <div class="col-md-4">
 
         <div class="card container">
           <a href="<%= @project.github %>">GitHub</a>
@@ -28,6 +22,7 @@
             <% end %>
           </ul>
         </div>
+
         <br>
         <div class="card container">
           <h4>Other Projects</h3>
@@ -37,10 +32,17 @@
             <% end %>
           </ul>
         </div>
-      </div>
-    </div>
-</div>
 
-<div class="container">
-  <%= link_to "Delete", @project, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    <div class="container">
+      <%= link_to "Delete", @project, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    </div>
+
+  </main>
+
+  <aside class="d-flex flex-column">
+    <% @project.images.each do |image| %>
+      <%= cl_image_tag image.key %>
+    <% end %>
+  </aside>
+
 </div>
