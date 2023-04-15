@@ -1,27 +1,28 @@
 <div class="container mt-4">
-  <div class="d-flex justify-content-between">
-    <h1>BLOG</h1>
-    <p><%= link_to "Write Blog Post", new_blog_path %></p>
-  </div>
+  <p><%= link_to "Write Blog Post", new_blog_path %></p>
 
   <%= form_with url: blogs_path, method: :get, class: "d-flex" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Search..."
-  %>
-  <%= submit_tag "Search", class: "btn btn-dark" %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Search..." %>
+    <%= submit_tag "Search", class: "btn btn-dark" %>
   <% end %>
 
-  <hr>
+</div>
 
-  <main>
+<main id ="blog-index" class="mt-4">
+  <aside>
+    <h1>BLOG</h1>
+  </aside>
+
+  <section>
 
     <% @blogs.each do |blog| %>
       <%= link_to blog_path(blog) do %>
         <div class="blog-cards">
             <div class="blog-header"
-              style="width: 100%; height: 250px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path blog.image.key, height: 100, crop: :fill %>')">
+              style="height: 250px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path blog.image.key %>')">
 
               <h4><%= blog.title %></h2>
               <p><%= blog.created_at.strftime("%d %B, %Y") %></p>
@@ -31,5 +32,5 @@
       </div>
     <% end %>
 
-  </main>
-</div>
+  </section>
+</main>
