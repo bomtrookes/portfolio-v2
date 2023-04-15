@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_16_123516) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_15_142920) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -59,6 +59,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_16_123516) do
     t.string "github"
     t.string "blog"
     t.string "skills", default: [], array: true
+    t.string "color_theme", default: "default"
   end
 
   create_table "users", force: :cascade do |t|

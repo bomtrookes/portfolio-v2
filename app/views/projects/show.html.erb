@@ -1,41 +1,33 @@
 <div id="project-show">
-  <main>
-    <h1><%= @project.name %></h1>
-      <%= link_to "All Projects", projects_path %>
-      <%= link_to "Edit", edit_project_path(@project) %>
-        <br>
-        <br>
-        <hr>
+  <main id="project-container" style="background:<%= @project.color_theme %>">
+    <section id="project-title">
+      <h1><%= @project.name %></h1>
       <p><%= @project.caption %></p>
-        <hr>
+    </section>
+
+    <section id="project-description">
       <p><%= @project.content %></p>
+    </section>
+
+    <section id="project-skills">
+      <h4>Built with...</h3>
+      <ul>
+        <% @project.skills.each do |skill| %>
+          <li><%= skill %></li>
+        <% end %>
+      </ul>
+    </section>
+
+    <section id="projects-list">
+      <h4>More Projects</h3>
+      <ul>
+        <% @projects.each do |project| %>
+          <li><%= link_to project.name, project_path(project) %></li>
+        <% end %>
+      </ul>
+    </section>
 
 
-        <div class="card container">
-          <a href="<%= @project.github %>">GitHub</a>
-          <a href="<%= @project.blog %>">Blog</a>
-          <a href="<%= @project.url %>">Project Url</a>
-          <h4>Built with...</h3>
-          <ul>
-            <% @project.skills.each do |skill| %>
-              <li><%= skill %></li>
-            <% end %>
-          </ul>
-        </div>
-
-        <br>
-        <div class="card container">
-          <h4>Other Projects</h3>
-          <ul>
-            <% @projects.each do |project| %>
-              <li><%= link_to project.name, project_path(project) %></li>
-            <% end %>
-          </ul>
-        </div>
-
-    <div class="container">
-      <%= link_to "Delete", @project, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-    </div>
 
   </main>
 
@@ -45,4 +37,16 @@
     <% end %>
   </aside>
 
+</div>
+
+<div class="links">
+  <a href="<%= @project.github %>">GitHub</a>
+  <a href="<%= @project.blog %>">Blog</a>
+  <a href="<%= @project.url %>">Project Url</a>
+</div>
+
+<div class="container">
+  <%= link_to "All Projects", projects_path %>
+  <%= link_to "Edit", edit_project_path(@project) %>
+  <%= link_to "Delete", @project, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
 </div>

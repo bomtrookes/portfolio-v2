@@ -4,9 +4,11 @@
 }
 .projects-show {
   overflow: hidden;
-  background-color: antiquewhite;
-  color: rgb(68, 26, 3);
-
+  // background-color: antiquewhite;
+  color: black;
+  footer {
+    background: white;
+  }
 }
 #projects {
   display: grid;
@@ -84,12 +86,48 @@
   main {
     grid-area: project;
     overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    padding: 24px 42px;
+    margin-left: 32px;
+  }
+  #project-title p {
+    font-size: 20px;
+  }
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    min-height: 100vh;
+    h1 {
+      width: 100%;
+      margin-bottom: 2rem;
+      position: fixed;
+      top: 12px;
+      left: 72px;
+    }
+    p {
+      width: 75%;
+    }
+    a {
+      text-decoration: none;
+      color: black;
+    }
   }
   aside {
     grid-area: images;
     overflow-y: scroll;
+    padding: 0 12px;
+    background: white;
     img {
       width: 100%;
+      max-width: 250px;
+      margin: 42px auto;
+      // border: 16px white solid;
+      // border-bottom: 32px solid white;
+      box-shadow: 0px 4px 6px 4px rgba(0, 0, 0, 0.1);
     }
   }
 }
