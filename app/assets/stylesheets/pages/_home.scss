@@ -33,11 +33,17 @@
     background: white;
     max-width: 75%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
     padding: 36px 24px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     font-size: 14px;
     font-family: monospace;
+    img {
+      height: 275px;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+    }
   }
 }
 
@@ -113,6 +119,7 @@
     }
   }
   #navigate {
+    z-index: 10;
     position: fixed;
     bottom: 0;
     right: 8px;

@@ -1,0 +1,39 @@
+@media screen and (max-width: 675px) {
+  .projects-show {
+    overflow: unset;
+    footer {
+      display: none;
+    }
+  }
+  #project-show {
+    display: unset;
+    height: unset;
+    width: unset;
+    overflow: unset;
+    grid-template-columns: unset;
+    grid-template-rows: unset;
+    grid-template-areas: unset;
+    main {
+      margin: 0;
+      grid-area: unset;
+      overflow-y: unset;
+      scroll-snap-type: unset;
+      scroll-behavior: unset;
+    }
+    section {
+      display: unset;
+      flex-direction: unset;
+      justify-content: unset;
+      align-items: unset;
+      scroll-snap-align: unset;
+      min-height: unset;
+      h1 {
+        position: unset;
+      }
+    }
+    aside {
+      grid-area: unset;
+      overflow-y: unset;
+    }
+  }
+}
