@@ -1,0 +1,46 @@
+@media screen and (max-width: 675px) {
+  #landing {
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 40% 60%;
+    grid-template-areas:
+      "welcome"
+      "links";
+    #welcome {
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      grid-area: welcome;
+      font-size: 14px;
+      p {
+        display: none;
+      }
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      span {
+        font-weight: bold;
+      }
+    }
+    #links {
+      grid-area: links;
+      h2 {
+        margin: 0;
+      }
+    }
+    #recent {
+      display: none;
+    }
+    #ink {
+      z-index: 0;
+      position: fixed;
+      top: 5%;
+      left: 0;
+      mix-blend-mode: overlay;
+    }
+  }
+}
