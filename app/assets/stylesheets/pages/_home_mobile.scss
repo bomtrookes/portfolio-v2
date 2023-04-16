@@ -1,4 +1,7 @@
 @media screen and (max-width: 675px) {
+  .projects-home footer {
+    display: none;
+  }
   #landing {
     z-index: 1;
     display: grid;
@@ -41,6 +44,42 @@
       top: 5%;
       left: 0;
       mix-blend-mode: overlay;
+    }
+  }
+}
+@media screen and (max-width: 675px){
+  #about {
+    padding: 0;
+    padding-top: 26px;
+    height: 100%;
+    align-items: flex-start;
+    .about-container {
+      height: 90%;
+      z-index: 1;
+      background: white;
+      max-width: 90%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: 36px 24px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      font-size: 14px;
+      font-family: monospace;
+      img {
+        object-fit: cover;
+        margin-bottom: 12px;
+        width: 100%;
+        aspect-ratio: 16/9;
+        padding: 12px;
+      }
+    }
+    #about-text {
+      padding: 12px;
+      text-align: justify;
+      width: 100%;
+      overflow-y: scroll;
+      -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 80%, transparent);
+      mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
     }
   }
 }
