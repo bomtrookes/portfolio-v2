@@ -6,7 +6,7 @@
     }
   }
   #project-show {
-    display: unset;
+    display: inline-block;
     height: unset;
     width: unset;
     overflow: unset;
@@ -14,26 +14,47 @@
     grid-template-rows: unset;
     grid-template-areas: unset;
     main {
+      padding: 0;
       margin: 0;
       grid-area: unset;
       overflow-y: unset;
       scroll-snap-type: unset;
       scroll-behavior: unset;
     }
+    #images {
+      position: unset;
+      height: unset;
+      width: 100%;
+      overflow-y: unset;
+      border-left: 1px solid rgb(170, 170, 170);
+      border-right: 1px solid rgb(170, 170, 170);
+    }
     section {
-      display: unset;
-      flex-direction: unset;
-      justify-content: unset;
-      align-items: unset;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding: 12px 24px;
+      align-items: center;
       scroll-snap-align: unset;
-      min-height: unset;
+      min-height: 100vh;
+      width: 100vw;
+      width: 100dvw;
       h1 {
+        font-family: "Jacques Francois Shadow";
+        font-size: 25vw;
+        text-align: justify;
         position: unset;
       }
-    }
-    aside {
-      grid-area: unset;
-      overflow-y: unset;
+      p {
+        text-align: justify;
+      }
+      img {
+        width: 90%;
+        aspect-ratio: 9/16;
+        margin: 12px 0;
+        border: 4px solid white;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
     }
   }
 }
