@@ -69,5 +69,5 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
 
   # ngrok http 3000 - run command and update url below
-  config.hosts << "96b3-185-192-71-179.ngrok-free.app"
+  config.hosts << "0cbb-81-151-82-148.ngrok-free.app"
 end
