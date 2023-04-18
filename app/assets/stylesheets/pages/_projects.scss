@@ -1,6 +1,6 @@
 .projects-index {
   color: rgb(68, 26, 3);
-  background-color: antiquewhite;
+  background-color: #f9f5ef;
 }
 .projects-show {
   overflow: hidden;
@@ -30,6 +30,11 @@
   width: 100%;
   font-size: 2rem;
   font-weight: 700;
+}
+.project-cards {
+  h4 {
+    display: none;
+  }
 }
 #work {
   display: grid;

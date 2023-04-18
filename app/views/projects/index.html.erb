@@ -13,6 +13,9 @@
     <% @projects.each_with_index do |project, index| %>
 
       <div class="project-cards">
+
+        <h4><%= project.name %></h4>
+
         <% if cl_image_tag project.cover_image.key %>
           <%= link_to project_path(project) do %>
             <%= cl_image_tag project.cover_image.key %>

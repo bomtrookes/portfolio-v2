@@ -87,9 +87,21 @@
       height: 100%;
       min-width: 100%;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       position: relative;
+      h4 {
+        display: inline-block;
+      }
+      img {
+        height: 60vw;
+        width: 60vw;
+        max-height: 475px;
+        max-width: 475px;
+        border: 1em white solid;
+        border-bottom: 3em white solid;
+      }
     }
   }
 }
