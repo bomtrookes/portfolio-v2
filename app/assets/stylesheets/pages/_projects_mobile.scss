@@ -6,7 +6,7 @@
     }
   }
   #project-show {
-    display: inline-block;
+    display: grid;
     height: unset;
     width: unset;
     overflow: unset;
@@ -41,8 +41,8 @@
       width: 100dvw;
       h1 {
         font-family: "Jacques Francois Shadow";
-        font-size: 25vw;
-        text-align: justify;
+        font-size: max(8vw, 12vw);
+        text-align: center;
         position: unset;
       }
       p {
@@ -50,11 +50,72 @@
       }
       img {
         width: 90%;
-        aspect-ratio: 9/16;
+        // aspect-ratio: 9/16;
         margin: 12px 0;
         border: 4px solid white;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       }
+    }
+  }
+}
+@media screen and (max-width: 675px) {
+  #projects {
+    display: grid;
+    // justify-content: center;
+    // align-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 15% 85%;
+    grid-template-areas:
+      "work"
+      "index";
+    .projects-header {
+      display: none;
+    }
+    .projects-index {
+      display: none;
+    }
+    #work {
+      display: block;
+      place-items: unset;
+      grid-area: unset;
+      h2 {
+        transform: unset;
+        font-size: 6em;
+        text-align: center;
+      }
+    }
+    #square {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      grid-area: index;
+    }
+    .project-cards {
+      scroll-snap-align: start;
+      display: inline-block;
+      height: 100%;
+      min-width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      h4 {
+        display: inline-block;
+      }
+      img {
+        height: 60vw;
+        width: 60vw;
+        max-height: 475px;
+        max-width: 475px;
+        border: 1em white solid;
+        border-bottom: 3em white solid;
+      }
+    }
+    div[content~=filler] {
+      display:none;
     }
   }
 }

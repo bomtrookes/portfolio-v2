@@ -13,6 +13,9 @@
     <% @projects.each_with_index do |project, index| %>
 
       <div class="project-cards">
+
+        <h4><%= project.name %></h4>
+
         <% if cl_image_tag project.cover_image.key %>
           <%= link_to project_path(project) do %>
             <%= cl_image_tag project.cover_image.key %>
@@ -23,7 +26,7 @@
     <% end %>
 
     <% (9 - @projects.size).times do %>
-      <div class="project-cards" style="text-align:center">
+      <div class="project-cards" style="text-align:center" content="filler">
         <p>Still Developing</p>
       </div>
     <% end %>
