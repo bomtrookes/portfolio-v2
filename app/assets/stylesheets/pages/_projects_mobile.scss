@@ -92,6 +92,9 @@
       ::-webkit-scrollbar {
         display: none;
       }
+      .counter {
+        display: inline-block;
+      }
     .projects-header {
       display: none;
     }
@@ -130,10 +133,10 @@
         display: inline-block;
       }
       img {
-        height: 60vw;
-        width: 60vw;
-        max-height: 475px;
-        max-width: 475px;
+        height: 40vw;
+        width: 40vw;
+        min-height: 225px;
+        min-width: 225px;
         border: 1em white solid;
         border-bottom: 3em white solid;
       }
