@@ -37,13 +37,13 @@
   </main>
 </div>
 
-<div class="links">
+<div class="links" style="position:fixed;bottom:0">
   <a href="<%= @project.github %>">GitHub</a>
   <a href="<%= @project.blog %>">Blog</a>
-  <a href="<%= @project.url %>">Project Url</a>
+  <a href="<%= @project.url %>">Web</a>
 </div>
 
-<div class="container">
+<div class="container" style="display:none;position:fixed;top:0">
   <%= link_to "All Projects", projects_path %>
   <%= link_to "Edit", edit_project_path(@project) %>
   <%= link_to "Delete", @project, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
