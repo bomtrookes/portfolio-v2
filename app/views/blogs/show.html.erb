@@ -2,11 +2,13 @@
   style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @blog.image.key %>')">
                           <h1><%= @blog.title %></h1>
   </div>
-  <%= link_to "Blog Posts", blogs_path %>
-  <%= link_to "Edit Post", edit_blog_path(@blog) %>
-  <%#= @blog.created_at -- alter date display %>
-  <hr>
-<div class="container">
+
+  <div class="container" style="position:fixed;top:0">
+    <%= link_to "Blog Posts", blogs_path %>
+    <%= link_to "Edit Post", edit_blog_path(@blog) %>
+  </div>
+
+  <div class="container">
 
   <%= raw @blog.content %>
   <div class="container">
