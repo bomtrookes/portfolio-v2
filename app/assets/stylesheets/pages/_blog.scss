@@ -74,9 +74,10 @@
     padding-top: 55px;
     h1 {
       transform: rotate(-90deg);
-      font-size: 89px;
+      font-size: 80px;
       position: sticky;
-      top: 62px;
+      top: 245px;
+      z-index: -1;
     }
   }
 }
