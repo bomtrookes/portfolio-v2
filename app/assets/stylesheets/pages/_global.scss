@@ -5,13 +5,22 @@
 body {
   position: relative;
 }
-.alert, .notice {
-  padding: 0;
-  margin: 0;
-}
 h1, h2, h3, h4{
   font-family: 'Jacques Francois Shadow';
 }
 p {
   font-family: monospace;
+}
+// flash messages
+@keyframes hide-message {
+  0% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+.alert, .notice {
+  animation: hide-message 4s forwards;
+  padding: 12px;
+  position: fixed;
+  top: 0;
+  right: 0;
 }
