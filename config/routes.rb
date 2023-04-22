@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   end
   resources :blogs do
   end
-
+  resources :contacts, only: [:new, :create]
 end
