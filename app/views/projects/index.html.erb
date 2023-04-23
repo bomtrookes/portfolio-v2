@@ -8,11 +8,12 @@
     <h1>WORK</h1>
   </div>
 
-  <div id="square" data-counter-target="index" data-action="scroll->counter#update">
+  <div id="square">
 
     <% @projects.each_with_index do |project, index| %>
 
-      <div class="project-cards">
+      <div class="project-cards" data-index="<%= index %>">
+
 
         <h4><%= project.name %></h4>
 
@@ -33,10 +34,9 @@
 
   </div>
 
-  <div class="counter" style="display:none">
+  <div class="counter">
     <p>
-      <span data-counter-target="counter">1</span>/
-      <span data-counter-target="size"><%= @projects.length %></span>
+      <span id="project-counter">1</span>/<span><%= @projects.length %></span>
     </p>
   </div>
 
