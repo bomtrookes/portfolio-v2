@@ -2,7 +2,7 @@
 
     <% @projects.each_with_index do |project, index| %>
 
-      <div class="project-cards">
+      <div class="project-cards" data-index="<%= index %>">
 
         <h4><%= project.name %></h4>
 
