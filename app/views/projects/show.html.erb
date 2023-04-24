@@ -24,12 +24,8 @@
     </section>
 
     <section id="projects-list" style="background:<%= @project.color_theme %>">
-      <h4>More Projects</h3>
-      <ul>
-        <% @projects.each do |project| %>
-          <li><%= link_to project.name, project_path(project) %></li>
-        <% end %>
-      </ul>
+      <h4>More Projects</h4>
+      <%= render 'projects', projects: @projects %>
     </section>
 
 
