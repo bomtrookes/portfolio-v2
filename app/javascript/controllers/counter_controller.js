@@ -5,7 +5,7 @@ export default class extends Controller {
 
   connect() {
     const projects = document.querySelectorAll('.project-cards');
-    const currentProject = document.getElementById('project-counter');
+    const currentProject = document.querySelectorAll('.project-counter');
     const options = {
       root: null,
       rootMargin: '0px',
@@ -15,15 +15,26 @@ export default class extends Controller {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const projectIndex = entry.target.dataset.index;
-          currentProject.textContent = parseInt(projectIndex, 10) + 1;
+          const index = parseInt(projectIndex, 10);
+          if (isNaN(index)) {
+            currentProject[0].textContent = 1;
+            currentProject[1].textContent = 1;
+          } else {
+            currentProject[0].textContent = index + 1;
+            currentProject[1].textContent = index + 1;
+          }
         }
       });
     }, options);
     projects.forEach(project => {
       observer.observe(project);
     });
-  }
-  update() {
-    console.log("end of file")
+
+    window.addEventListener('resize', () => {
+      observer.disconnect();
+      projects.forEach(project => {
+        observer.observe(project);
+      });
+    });
   }
 }

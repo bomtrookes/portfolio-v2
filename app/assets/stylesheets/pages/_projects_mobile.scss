@@ -32,7 +32,7 @@
     section {
       display: flex;
       flex-direction: column;
-      justify-content: space-evenly;
+      justify-content: center;
       padding: 12px 24px;
       align-items: center;
       scroll-snap-align: unset;
@@ -56,6 +56,16 @@
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       }
     }
+  }
+  .links {
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+    flex-direction: row;
+    height: 3.2rem;
+    width: 40%;
+    border-radius: 4px 4px 0 0;
+    background: white;
   }
 }
 
@@ -157,5 +167,17 @@
     div[content~=filler] {
       display:none;
     }
+  }
+  .bg-num {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100vh;
+    z-index: -1;
+    mix-blend-mode: overlay;
+  }
+  .project-counter {
+    display: inline-block !important;
   }
 }

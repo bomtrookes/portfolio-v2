@@ -1,0 +1,13 @@
+.contacts-new {
+  nav {
+    position: absolute;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(1px);
+    width: 100%;
+    z-index: 10;
+  }
+  footer {
+    display: none;
+  }
+}
