@@ -17,6 +17,9 @@ export default class extends Controller {
           const projectIndex = entry.target.dataset.index;
           currentProject.textContent = parseInt(projectIndex, 10) + 1;
         }
+        else {
+          currentProject.textContent = 1;
+        }
       });
     }, options);
     projects.forEach(project => {
