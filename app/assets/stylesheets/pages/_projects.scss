@@ -2,12 +2,24 @@
   color: rgb(68, 26, 3);
   background-color: #f9f5ef;
   padding: 0;
+  .project-counter {
+    display: none
+  }
 }
 .projects-show {
   overflow: hidden;
   // background-color: antiquewhite;
   color: black;
+  nav {
+    position: absolute;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(1px);
+    width: 100%;
+    z-index: 10;
+  }
   footer {
+    display: none;
     background: white;
   }
 }
@@ -142,5 +154,21 @@
     scroll-behavior: smooth;
     background-color: white !important;
     border: none;
+  }
+}
+.links {
+  display: flex;
+  position: fixed;
+  height: 162px;
+  bottom: 50%;
+  transform: translateY(50%);
+  justify-content: space-evenly;
+  flex-direction: column;
+  font-size: 26px;
+  padding: 8px;
+  border-radius: 0 4px 4px 0;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  a {
+    color: black;
   }
 }
