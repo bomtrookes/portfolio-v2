@@ -4,6 +4,7 @@ export default class extends Controller {
   static targets = ["index", "counter"];
 
   connect() {
+    console.log("counter controller connected")
     const projects = document.querySelectorAll('.project-cards');
     const currentProject = document.querySelectorAll('.project-counter');
     const options = {
