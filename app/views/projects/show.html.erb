@@ -39,12 +39,22 @@
   <a href="<%= @project.url %>"><i class="bi bi-at"></i></a>
 </div>
 
-<div class="modal" style="display:none;position:fixed;top:0">
-  <%= link_to "All Projects", projects_path %>
-  <%= link_to "Edit", edit_project_path(@project) %>
-  <%= link_to "Delete", @project, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-</div>
+
 
 <% if current_user.admin %>
-  <span style="position:fixed;bottom:6px;right:12px;mix-blend-mode:difference"><i style="color:white;font-size:24px"class="bi bi-exclamation-triangle-fill"></i></span>
+  <div data-controller="modal" style="position:fixed;bottom:6px;right:12px;text-align:right">
+    <span id="modal-open" data-modal-target="open" data-action="click->modal#open">
+      <i class="bi bi-exclamation-triangle-fill"></i>
+    </span>
+
+  <div class="modal" data-modal-target="modal" style="position:fixed;top:0">
+    <div style="background:white;border-radius:4px">
+      <h3>Admin Options</h3>
+      <span id="modal-close" data-modal-target="close" data-action="click->modal#close">Close</span>
+      <%= link_to "Edit", edit_project_path(@project) %>
+      <%= link_to "Delete", @project, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    </div>
+  </div>
+
+  </div>
 <% end %>
