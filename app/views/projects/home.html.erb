@@ -14,7 +14,7 @@
 
     </section>
 
-    <section id="links">
+    <section id="home-links">
 
       <div>
         <h2><%= link_to "WORK", projects_path %></h2>
@@ -36,3 +36,25 @@
 
   </main>
 </div>
+
+<% if current_user.admin %>
+ <div data-controller="modal" style="position:fixed;bottom:6px;right:12px;text-align:right">
+    <span id="modal-open" data-modal-target="open" data-action="click->modal#open">
+      <i class="bi bi-person-fill-exclamation"></i>
+    </span>
+
+  <div class="modal" data-modal-target="modal" style="position:fixed;top:0">
+    <div class="modal-container">
+      <div class="modal-title">
+        <h4>Admin Options</h4>
+        <span id="modal-close" data-modal-target="close" data-action="click->modal#close">
+          <i class="bi bi-x-circle-fill"></i>
+        </span>
+      </div>
+      <div class="modal-actions">
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-dark" %>
+
+      </div>
+    </div>
+  </div>
+<% end %>
