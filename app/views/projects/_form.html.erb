@@ -8,6 +8,7 @@
   <%= f.input :github %>
   <%= f.input :url %>
   <%= f.input :blog %>
+  <%= f.input :published, as: :boolean %>
   <%= f.input :images, as: :file, input_html: { multiple: true } %>
   <%= f.input :skills, input_html: { name: "project[skills]" } %>
   <%= f.submit %>
