@@ -1,5 +1,31 @@
 .modal {
   display:none;
+  .modal-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: white;
+    padding: 12px;
+    border-radius: 4px;
+    height: 15vh;
+    width: 30vw;
+  }
+  .modal-title {
+    display: flex;
+    justify-content: space-between;
+    h4 {
+      text-align: center;
+      width: 100%;
+    }
+  }
+  .modal-actions {
+    display: flex;
+    justify-content: space-evenly;
+    a {
+      min-width: 5em;
+      color: white;
+    }
+  }
 }
 .is-active {
   display: grid;
