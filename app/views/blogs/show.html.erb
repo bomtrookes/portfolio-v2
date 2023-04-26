@@ -4,8 +4,7 @@
   </div>
 
   <% if current_user.admin %>
-    <div class="container" style="position:fixed;bottom:0;width: 100%;text-align:center">
-      <%= link_to "Blog Posts", blogs_path, class: "btn btn-primary" %>
+    <div class="container" style="position:fixed;bottom:0;width: 100%;text-align:right">
       <%= link_to "Edit Post", edit_blog_path(@blog), class: "btn btn-success" %>
       <%= link_to "Delete", @blog, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
     </div>
@@ -14,7 +13,7 @@
   <div class="container">
 
   <%= raw @blog.content %>
-  <div class="container">
+  <div class="container mb-5">
     <h3>Read My Other Posts</h3>
     <ul>
       <% @blogs.each do |blog| %>
