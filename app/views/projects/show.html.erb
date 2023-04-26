@@ -39,8 +39,12 @@
   <a href="<%= @project.url %>"><i class="bi bi-at"></i></a>
 </div>
 
-<div class="container" style="display:none;position:fixed;top:0">
+<div class="modal" style="display:none;position:fixed;top:0">
   <%= link_to "All Projects", projects_path %>
   <%= link_to "Edit", edit_project_path(@project) %>
   <%= link_to "Delete", @project, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
 </div>
+
+<% if current_user.admin %>
+  <span style="position:fixed;bottom:6px;right:12px;mix-blend-mode:difference"><i style="color:white;font-size:24px"class="bi bi-exclamation-triangle-fill"></i></span>
+<% end %>
