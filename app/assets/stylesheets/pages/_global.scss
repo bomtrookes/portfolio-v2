@@ -1,6 +1,9 @@
 * {
   // background-color: rgba(75, 150, 75, 0.1) !important;
   box-sizing: border-box;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 body {
   position: relative;

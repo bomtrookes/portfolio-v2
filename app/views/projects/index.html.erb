@@ -60,7 +60,7 @@
     1
   </div>
 
-<% if current_user.admin %>
+<% if current_user %>
  <div data-controller="modal" style="position:fixed;bottom:6px;right:12px;text-align:right">
     <span id="modal-open" data-modal-target="open" data-action="click->modal#open">
       <i class="bi bi-person-fill-exclamation"></i>

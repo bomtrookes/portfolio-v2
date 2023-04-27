@@ -1,12 +1,15 @@
 @media screen and (max-width: 675px) {
-  .projects-home footer {
-    display: none;
+  .projects-home {
+    overflow: unset;
+    footer {
+      display: none;
+    }
   }
   #landing {
     z-index: 1;
     display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 40% 60%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 3fr;
     grid-template-areas:
       "welcome"
       "links";
@@ -33,6 +36,9 @@
     #home-links {
       grid-area: links;
       justify-content: center;
+      height: fit-content;
+      width: fit-content;
+      margin: 0 auto;
       h2 {
         margin: 0;
         font-size: 6.5rem;

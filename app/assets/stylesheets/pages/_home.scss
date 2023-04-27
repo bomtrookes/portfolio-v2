@@ -63,8 +63,9 @@
   }
   #home-links {
     display: flex;
-    width: 100%;
-    height: 100% !important;
+    width: unset;
+    height: unset;
+    margin: 0 auto;
     justify-content: center;
     align-items: center;
     grid-area: links;
