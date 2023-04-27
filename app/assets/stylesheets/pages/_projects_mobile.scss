@@ -80,6 +80,13 @@
     grid-template-areas:
       "work ."
       "square projects";
+      .projects-index {
+        justify-content: flex-start;
+        padding-top: 1rem;
+      }
+  }
+  #square {
+    align-self: flex-start;
   }
   #work h1 {
     transform: unset;

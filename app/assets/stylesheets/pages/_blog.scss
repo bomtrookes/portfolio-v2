@@ -92,9 +92,32 @@
 }
 .blogs-show {
   footer {
-    display: none;
+    display: unset;
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    text-align: center;
+  }
+  p {
+    transform: unset;
   }
 }
 #blog_content {
   height: 22em;
+}
+#other-posts {
+  margin: 3rem 0;
+  text-align: center;
+  ul {
+    list-style: none;
+    padding: 0;
+    line-height: 1.8rem;
+  }
+  a {
+    color: black;
+    text-decoration: none;
+    &:hover {
+      color: rgb(64, 64, 64);
+    }
+  }
 }
