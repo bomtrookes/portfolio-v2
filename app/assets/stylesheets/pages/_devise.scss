@@ -1,0 +1,24 @@
+.sessions-new {
+  nav {
+    background: black;
+  }
+}
+#sign__in {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  h2 {
+    margin-bottom: 1rem;
+  }
+  .form__button {
+    width: 100%;
+  }
+  #shared-links {
+    text-align: center;
+  }
+  a {
+    text-align: center;
+  }
+}
