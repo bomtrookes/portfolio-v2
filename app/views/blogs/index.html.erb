@@ -50,7 +50,7 @@
       </div>
       <div class="modal-actions">
         <%= link_to "New Blog", new_blog_path, class: "btn btn-primary" %>
-        <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-dark" %>
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "btn btn-dark" %>
       </div>
     </div>
   </div>

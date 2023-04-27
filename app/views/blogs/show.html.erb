@@ -33,7 +33,7 @@
       <div class="modal-actions">
         <%= link_to "Edit", edit_blog_path(@blog), class: "btn btn-success" %>
         <%= link_to "Delete", @blog, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
-        <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-dark" %>
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "btn btn-dark" %>
       </div>
     </div>
   </div>
