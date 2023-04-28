@@ -1,6 +1,6 @@
 .projects-home {
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  background-color: #f9f5ef;
   nav {
     display: none;
   }
@@ -14,9 +14,9 @@
   color: rgb(46, 27, 20);
   display: grid;
   padding: 3rem;
-  height: 100%;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 40% 60%;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-template-areas:
     "ink recent"
     "welcome links";
