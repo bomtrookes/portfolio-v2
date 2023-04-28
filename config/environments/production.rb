@@ -95,6 +95,14 @@ Rails.application.configure do
     config.secure = true
   end
 
+  config.asset_host = proc do |source|
+    if source.starts_with?('/uploads/')
+      "https://res.cloudinary.com/#{Cloudinary.config.cloud_name}/image/upload"
+    else
+      "https://res.cloudinary.com/#{Cloudinary.config.cloud_name}/#{Cloudinary::Utils.private_download_url(source)}"
+    end
+  end
+
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
