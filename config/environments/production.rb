@@ -63,6 +63,8 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+  config.action_mailer.raise_delivery_errors = true
+
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
   # config.action_cable.url = "wss://example.com/cable"
