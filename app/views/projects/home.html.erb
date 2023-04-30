@@ -27,10 +27,10 @@
     <section id="recent">
 
       <h5>Latest Blog Post:</h5>
-        <%= link_to @blogs.last.title, blog_path(@blogs.last) %>
+        <%= link_to @latest_blog.title, blog_path(@latest_blog) %>
       <br><br>
       <h5>Recent Project:</h5>
-        <%= link_to @projects.last.name, project_path(@projects.last) %>
+        <%= link_to @latest_project.name, project_path(@latest_project) %>
 
     </section>
 

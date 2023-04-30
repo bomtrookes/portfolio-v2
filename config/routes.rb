@@ -4,8 +4,14 @@ Rails.application.routes.draw do
 
   root "projects#home"
   resources :projects do
+    collection do
+      get "drafts", to: "projects#drafts"
+    end
   end
   resources :blogs do
+    collection do
+      get "drafts", to: "blogs#drafts"
+    end
   end
   resources :contacts, only: [:new, :create]
 end

@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Drafts</h1>
+  <ul>
+    <% @draft_projects.each do |project| %>
+      <li><%= project.name %></li>
+    <% end %>
+  </ul>
+
+</div>
