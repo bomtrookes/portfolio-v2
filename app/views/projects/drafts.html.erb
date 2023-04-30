@@ -1,0 +1,9 @@
+<div class="container mt-3">
+  <h1>Drafts</h1>
+  <ul>
+    <% @draft_projects.each do |project| %>
+      <li><%= link_to project.name, edit_project_path(project) %></li>
+    <% end %>
+  </ul>
+
+</div>

@@ -29,7 +29,6 @@
   background-position : center;
   background-size : cover;
   background-repeat : no-repeat;
-  margin-bottom: 1.5rem;
 }
 
 // index
@@ -79,11 +78,10 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    font-size: 40px;
     padding-top: 100px;
     h1 {
       transform: rotate(-90deg);
-      font-size: 8vw;
+      font-size: clamp(80px, calc(6.5vw + 1px), 999px);
       position: sticky;
       top: 20vh;
       z-index: -1;
@@ -92,10 +90,13 @@
 }
 .blogs-show {
   footer {
-    display: unset;
-    width: 100%;
+    display: grid;
+    place-items: center;
+    width: 100vw;
     height: fit-content;
     position: relative;
+    left: 0;
+    bottom: 0;
     text-align: center;
   }
   p {
@@ -114,7 +115,7 @@
     line-height: 1.8rem;
   }
   a {
-    color: black;
+    color: rgb(24, 42, 148);
     text-decoration: none;
     &:hover {
       color: rgb(64, 64, 64);

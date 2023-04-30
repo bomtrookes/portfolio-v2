@@ -75,7 +75,8 @@
         </span>
       </div>
       <div class="modal-actions">
-        <%= link_to "Add", new_project_path(@project), class: "btn btn-success" %>
+        <%= link_to "Add", new_project_path(@project), class: "btn btn-primary" %>
+        <%= link_to "Drafts", drafts_projects_path, class: "btn btn-success" %>
         <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "btn btn-dark" %>
 
       </div>

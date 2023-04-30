@@ -7,12 +7,12 @@ class BlogsController < ApplicationController
     if params[:query].present?
       @blogs = Blog.search_by_title_and_content(params[:query])
     else
-    @blogs = Blog.all
+    @blogs = Blog.where(published: true)
     end
   end
 
   def show
-    @blogs = Blog.all
+    @blogs = Blog.where(published: true).where.not(id: @blog.id)
   end
 
   def new
@@ -44,6 +44,10 @@ class BlogsController < ApplicationController
     redirect_to blogs_path, status: :see_other
   end
 
+  def drafts
+    @draft_blogs = Blog.where(published: false)
+  end
+
   private
 
   def set_blog
@@ -51,7 +55,7 @@ class BlogsController < ApplicationController
   end
 
   def blog_params
-    params.require(:blog).permit(:title, :content, :image)
+    params.require(:blog).permit(:title, :content, :image, :published)
   end
 
   def sanitize_html_input

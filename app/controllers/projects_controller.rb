@@ -1,21 +1,26 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: :drafts
 
   def home
-    @projects = Project.all
-    @blogs = Blog.all
+    @latest_project = Project.where(published: true).last
+    @latest_blog = Blog.where(published: true).last
+  end
+
+  def drafts
+    @draft_projects = Project.where(published: false)
   end
 
   def index
     if params[:query].present?
       @projects = Project.search_all_projects(params[:query])
     else
-      @projects = Project.all
+      @projects = Project.where(published: true)
     end
   end
 
   def show
-    @projects = Project.all
+    @projects = Project.where(published: true).where.not(id: @project.id)
   end
 
   def new
@@ -52,7 +57,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name, :caption, :content, :url, :github, :blog, :cover_image, images: [], skills: [])
+    params.require(:project).permit(:name, :caption, :content, :color_theme, :published, :url, :github, :blog, :cover_image, images: [], skills: [])
   end
 
   def set_project
