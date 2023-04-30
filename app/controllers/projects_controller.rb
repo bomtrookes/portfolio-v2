@@ -20,7 +20,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @projects = Project.where(published: true)
+    @projects = Project.where(published: true).where.not(id: @project.id)
   end
 
   def new

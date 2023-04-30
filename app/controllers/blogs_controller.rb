@@ -12,7 +12,7 @@ class BlogsController < ApplicationController
   end
 
   def show
-    @blogs = Blog.all
+    @blogs = Blog.where(published: true).where.not(id: @blog.id)
   end
 
   def new
