@@ -1,10 +1,16 @@
-<nav>
+<nav data-controller="navbar" data-navbar-target="nav">
   <h4><%= link_to "TB", root_path %></h4>
-  <ul>
-    <li><%= link_to "Blog", blogs_path %></li>
-    <li><%= link_to "Projects", projects_path %></li>
-    <li><%= link_to "Contact", new_contact_path %></li>
-    <%# <li><a href="https://www.github.com/bomtrookes" target="_blank">GitHub</a></li> %>
-    <%# <li><a href="https://www.linkedin.com/in/thomasbrookes" target="_blank">LinkedIn</a></li> %>
-  </ul>
+
+  <i id="menu" class="bi bi-list" data-navbar-target="button" data-action="click->navbar#menu"></i>
+
+  <div class="nav-links" data-navbar-target="links">
+    <i id="close-menu" class="bi bi-x" data-navbar-target="close" data-action="click->navbar#close"></i>
+    <ul>
+      <li><%= link_to "Blog", blogs_path %></li>
+      <li><%= link_to "Projects", projects_path %></li>
+      <li><%= link_to "Contact", new_contact_path %></li>
+      <%#= link_to "About Me", about_me_path %>
+    </ul>
+  </div>
+
 </nav>

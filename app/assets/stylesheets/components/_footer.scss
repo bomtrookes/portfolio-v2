@@ -15,3 +15,8 @@ footer {
     transform: rotate(-90deg);
   }
 }
+.blogs-new, .blogs-edit {
+  footer {
+    display: none !important;
+  }
+}

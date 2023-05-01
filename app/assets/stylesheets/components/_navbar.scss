@@ -33,3 +33,49 @@ nav {
     mix-blend-mode: unset;
   }
 }
+
+#menu {
+  display: none;
+  font-size: 24px;
+}
+#close-menu {
+  display: none;
+  font-size: 24px;
+}
+
+@media screen and (max-width: 675px) {
+  nav {
+    #menu {
+      display: inline-block;
+      cursor: pointer;
+    }
+    #close-menu {
+      display: inline-block;
+      cursor: pointer;
+      position: fixed;
+      top: 0;
+      right: 0;
+      padding: 12px;
+    }
+    .nav-links {
+      position: fixed;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .active {
+    background: #a52a2a;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+  }
+}
