@@ -18,3 +18,6 @@ application.register("modal", ModalController)
 
 import NavbarController from "./navbar_controller"
 application.register("navbar", NavbarController)
+
+import PromptsController from "./prompts_controller"
+application.register("prompts", PromptsController)

@@ -1,8 +1,15 @@
 <div id="project-show">
-  <main id="project-container">
+  <main id="project-container"
+  data-controller="prompts"
+  data-prompts-target="container"
+  data-action="scroll->prompts#fadeOut">
     <section id="project-title" style="background-color:<%= @project.color_theme %>">
       <h1><%= @project.name.upcase %></h1>
       <p><%= @project.caption %></p>
+
+      <div class="prompt" data-prompts-target="icon">
+        <i class="bi bi-chevron-compact-down"></i>
+      </div>
     </section>
 
     <section id="project-description">
@@ -27,8 +34,6 @@
       <h4>More Projects</h4>
       <%= render 'projects', projects: @projects %>
     </section>
-
-
 
   </main>
 </div>
@@ -71,12 +76,3 @@
 
   </div>
 <% end %>
-
-<div style=
-   "position: fixed;
-    bottom: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 3rem;">
-  <i class="bi bi-chevron-compact-down"></i>
-</div>
