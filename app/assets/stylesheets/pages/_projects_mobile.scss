@@ -37,6 +37,7 @@
       align-items: center;
       scroll-snap-align: unset;
       min-height: 100vh;
+      min-height: 100dvh;
       width: 100vw;
       width: 100dvw;
       h1 {
@@ -103,6 +104,7 @@
       place-items: center;
       height: unset;
       width: 100vw;
+      width: 100dvw;
       position: unset;
     }
     p {
@@ -180,7 +182,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 100vh;
+    font-size: 90vh;
     z-index: -1;
     mix-blend-mode: overlay;
   }
