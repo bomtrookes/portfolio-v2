@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import CopyController from "./copy_controller"
+application.register("copy", CopyController)
+
 import CounterController from "./counter_controller"
 application.register("counter", CounterController)
 

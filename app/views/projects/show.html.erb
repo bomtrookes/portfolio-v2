@@ -34,10 +34,16 @@
 </div>
 
 <div class="links">
-  <a href="<%= @project.github %>"><i class="bi bi-github"></i></a>
-  <a href="<%= @project.blog %>"><i class="bi bi-eyeglasses"></i></a>
-  <a href="<%= @project.url %>"><i class="bi bi-at"></i></a>
-  <a href="#"><i class="bi bi-share"></i></a>
+  <% if @project.github.present? %>
+    <a href="<%= @project.github %>" target="_blank"><i class="bi bi-github"></i></a>
+  <% end %>
+  <% if @project.blog.present? %>
+    <a href="<%= @project.blog %>" target="_blank"><i class="bi bi-eyeglasses"></i></a>
+  <% end %>
+  <% if @project.url.present? %>
+    <a href="<%= @project.url %>" target="_blank"><i class="bi bi-at"></i></a>
+  <% end %>
+  <%# <a href="#"><i class="bi bi-share"></i></a>%>
 </div>
 
 

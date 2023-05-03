@@ -52,7 +52,8 @@
         </span>
       </div>
       <div class="modal-actions">
-        <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "btn btn-dark" %>
+        <%= link_to "Password", edit_user_password_path, class: "btn btn-dark" %>
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "btn btn-danger" %>
       </div>
     </div>
   </div>
