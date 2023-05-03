@@ -5,9 +5,11 @@
     display: none;
   }
 }
+html {
+  overflow-y: hidden;
+}
 body {
   position: relative;
-  overflow-x: hidden;
 }
 h1, h2, h3, h4{
   font-family: 'Jacques Francois Shadow';
