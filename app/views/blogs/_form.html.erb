@@ -1,9 +1,12 @@
 <%= simple_form_for(@blog) do |f| %>
 
-  <%= f.input :title %>
-  <%= f.input :content %>
-  <%= f.input :published, as: :boolean %>
-  <%= f.input :image, as: :file %>
-  <%= f.submit %>
+  <%= f.input :title, placeholder: "Title", label: false %>
+  <%= f.input :content, placeholder: "Article", label: false %>
+  <%= f.input :image, as: :file, label: false %>
+
+  <div class="d-flex justify-content-between">
+    <%= f.input :published, as: :boolean %>
+    <%= f.submit class: "btn btn-success" %>
+  </div>
 
 <% end %>
