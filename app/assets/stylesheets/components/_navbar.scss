@@ -46,9 +46,14 @@ nav {
 
 @media screen and (max-width: 675px) {
   nav {
+    mix-blend-mode: unset;
+    a {
+      color : black;
+    }
     #menu {
       display: inline-block;
       cursor: pointer;
+      color: black;
     }
     #close-menu {
       display: inline-block;
@@ -88,6 +93,7 @@ nav {
       display: flex;
       transform: translateX(0);
       transition: transform 0.2s ease;
+      z-index: 100;
     }
   }
 }

@@ -1,16 +1,19 @@
 <%= simple_form_for(@project) do |f| %>
 
-  <%= f.input :cover_image, as: :file %>
-  <%= f.input :color_theme %>
-  <%= f.input :name %>
-  <%= f.input :caption %>
-  <%= f.input :content %>
-  <%= f.input :github %>
-  <%= f.input :url %>
-  <%= f.input :blog %>
-  <%= f.input :published, as: :boolean %>
-  <%= f.input :images, as: :file, input_html: { multiple: true } %>
-  <%= f.input :skills, input_html: { name: "project[skills]" } %>
-  <%= f.submit %>
+  <%= f.input :cover_image, as: :file, i18n: { placeholder: "Cover Image"} %>
+  <%= f.input :color_theme, placeholder: "Color Theme", label: false %>
+  <%= f.input :name, placeholder: "Project Name", label: false %>
+  <%= f.input :caption, placeholder: "Caption", label: false %>
+  <%= f.input :content, placeholder: "Description", label: false %>
+  <%= f.input :github, placeholder: "GitHub", label: false %>
+  <%= f.input :url, placeholder: "Website", label: false %>
+  <%= f.input :blog, placeholder: "Blog Post", label: false %>
+  <%= f.input :images, as: :file, label: false, input_html: { multiple: true } %>
+  <%= f.input :skills, placeholder: "Skills", label: false, input_html: { name: "project[skills]" } %>
+
+  <div class="d-flex justify-content-between align-items-center">
+    <%= f.input :published, as: :boolean %>
+    <%= f.submit %>
+  </div>
 
 <% end %>
