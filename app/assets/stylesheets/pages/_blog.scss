@@ -1,3 +1,16 @@
+.blogs-show {
+  p {
+    line-height: 1.8rem;
+    text-align: justify;
+  }
+  h2, h3 {
+    font-family: monospace;
+  }
+  .alert, .notice {
+    display: none;
+  }
+}
+
 .blog-img-sm {
   display: block;
   margin: 0 auto;
@@ -29,6 +42,9 @@
   background-position : center;
   background-size : cover;
   background-repeat : no-repeat;
+  h1 {
+    text-align: center;
+  }
 }
 .blog-info {
   border-top: 1px solid rgb(18, 80, 146);
@@ -36,6 +52,7 @@
   p {
     text-align: center;
     color : grey;
+    font-size: 0.8rem;
     margin : 4px;
   }
   span {
@@ -44,10 +61,12 @@
 }
 // index
 .blogs-index {
-  background-color: #f9f5ef;
   font-family: monospace;
   a {
     color: black;
+  }
+  .alert, .notice {
+    display: none;
   }
 }
 .blog-cards {
