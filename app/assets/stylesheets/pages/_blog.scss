@@ -30,7 +30,18 @@
   background-size : cover;
   background-repeat : no-repeat;
 }
-
+.blog-info {
+  border-top: 1px solid rgb(18, 80, 146);
+  border-bottom: 1px solid black;
+  p {
+    text-align: center;
+    color : grey;
+    margin : 4px;
+  }
+  span {
+    color: rgb(18, 80, 146);
+  }
+}
 // index
 .blogs-index {
   background-color: #f9f5ef;
