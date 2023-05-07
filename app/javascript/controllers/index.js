@@ -10,6 +10,9 @@ application.register("copy", CopyController)
 import CounterController from "./counter_controller"
 application.register("counter", CounterController)
 
+import GalleryController from "./gallery_controller"
+application.register("gallery", GalleryController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 

@@ -24,10 +24,12 @@
       </ul>
     </section>
 
-    <section id="images" class="d-flex flex-column">
+    <section id="images" class="d-flex flex-column" data-controller="gallery">
       <% @project.images.each do |image| %>
-        <%= cl_image_tag image.key %>
+        <%= cl_image_tag image.key, data: { target: "image", action: "click->gallery#show" } %>
       <% end %>
+      <div data-gallery-target="gallery" class="modal" data-action="click->gallery#hide">
+      </div>
     </section>
 
     <section id="projects-list" style="background:<%= @project.color_theme %>">
